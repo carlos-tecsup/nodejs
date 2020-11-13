@@ -1,0 +1,108 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Awesome Login Page</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+<style>.login-container{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.login-form-1{
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+  text-align: center;
+  color: #333;
+}
+.login-form-2{
+  padding: 5%;
+  background: #0062cc;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+  text-align: center;
+  color: #fff;
+}
+.login-container form{
+  padding: 10%;
+}
+.btnSubmit
+{
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
+}
+.login-form-2 .btnSubmit{
+  font-weight: 600;
+  color: #0062cc;
+  background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+  color: #0062cc;
+  font-weight: 600;
+  text-decoration: none;
+}</style>
+<body>
+  <html>
+    <div class="container login-container">
+      <div class="row">
+      
+        <div class="col-md-12 login-form-2">
+          <h3 class="text-center">REGISTRO</h3>
+          <%- include ('./partials/messages') %>
+
+          <form action="/users/register" method="post">
+            <div class="form-group ">
+              <input class="form-control"  type="name" name="name" placeholder="Enter Name"
+                value="<%= typeof name != 'undefined' ? name : '' %>" />
+  
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="email" name="email" placeholder="Enter Email"
+                value="<%= typeof email != 'undefined' ? email : '' %>" /> </div>
+            <div class="form-group">
+              <input class="form-control" type="password" name="password" placeholder="Create Password"
+              value="<%= typeof password != 'undefined' ? password : '' %>" />
+            </div>
+            
+            <div class="form-group">
+              <input class="form-control" type="password" name="password2" placeholder="Confirm Password"
+                value="<%= typeof password2 != 'undefined' ? password2 : '' %>" /> </div>
+            <div class="form-group">
+           
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">
+                Registrate
+              </button>
+            </form>
+            <p>Have An Account? <button class="btn btn-dark"><a href="/users/login">Login</a></button></p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+ 

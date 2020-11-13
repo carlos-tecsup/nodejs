@@ -1,0 +1,73 @@
+
+<%- include ('partials/_header') %>
+
+<div class="container">
+
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-5">
+      <div class="card">
+        <div class="card-body">
+          <form action="/add" method="post" class="table-striped">
+            <div class="form-group">
+              <input class="form-control" type="text" name="nombre" placeholder="nombre">
+              <br>
+              <input class="form-control" type="text" name="area" placeholder="area">
+              <br>
+              <input class="form-control" type="text" name="precio" placeholder="precio">
+              <br>
+              <input class="form-control" type="text" name="profesor" placeholder="profesor">
+              <br>
+              <input class="form-control" type="text" name="descripcion" placeholder="descripcion">
+            </div>
+           
+            <button class="btn btn-primary btn-lg btn-block text-center" type="submit">
+              AGREGAR
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIST -->
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Area</th>
+            <th>Precio</th>
+            <th>Profesor</th>
+            <th>Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < course.length; i++) { %>
+            <tr>
+              <td><%= i + 1%></td>
+              <td><strong><%= course[i].nombre %></strong></td>
+              <td><%= course[i].area %></td>
+              <td><%= course[i].precio %></td>
+              <td><%= course[i].profesor %></td>
+              <td><%= course[i].descripcion %></td>
+              <td>
+                <a href="/edit/<%= course[i]._id %>" class="btn btn-info">
+                  Edit
+                </a>
+                <a href="/delete/<%= course[i]._id %>"
+                  class="btn btn-danger">
+                  Delete
+                </a>
+                
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
+
